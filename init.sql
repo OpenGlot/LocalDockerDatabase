@@ -265,3 +265,68 @@ VALUES ('20240617034340_InitialCreate', '8.0.6');
 
 COMMIT;
 
+-- Seed Data
+
+-- Seed data for UserProfiles
+INSERT INTO "UserProfiles" ("UserId", "Username", "Email", "NativeLanguage", "TargetLanguage", "TargetLanguageLevel", "TargetLanguage2", "TargetLanguageLevel2", "TargetLanguage3", "TargetLanguageLevel3", "DateOfBirth", "TimeZone")
+VALUES
+('1', 'user1', 'user1@example.com', 'English', 'Spanish', 'Intermediate', 'Chinese', 'Beginner', 'French', 'Advanced', '1990-01-01 00:00:00+00', 'UTC'),
+('2', 'user2', 'user2@example.com', 'Chinese', 'English', 'Advanced', 'Japanese', 'Intermediate', NULL, NULL, '1985-05-15 00:00:00+00', 'UTC+8'),
+('3', 'user3', 'user3@example.com', 'Spanish', 'Portuguese', 'Intermediate', 'English', 'Advanced', 'German', 'Beginner', '1992-08-20 00:00:00+00', 'UTC-5'),
+('4', 'user4', 'user4@example.com', 'French', 'Russian', 'Beginner', 'Arabic', 'Intermediate', 'Japanese', 'Beginner', '1988-12-30 00:00:00+00', 'UTC+1');
+
+-- Seed data for Languages
+INSERT INTO "Languages" ("Name", "Description")
+VALUES
+('Chinese', 'Spoken in China, Taiwan, Singapore. Useful for business and cultural understanding.'),
+('Spanish', 'Spoken in Spain, Latin America. Useful for travel and communication in Spanish-speaking countries.'),
+('English', 'Spoken worldwide. Essential for international business and travel.'),
+('Arabic', 'Spoken in the Middle East and North Africa. Important for business and cultural studies.'),
+('Hindi', 'Spoken in India. Useful for business and cultural exchange in South Asia.'),
+('Portuguese', 'Spoken in Portugal, Brazil, and some African countries. Useful for travel and business in these regions.'),
+('Russian', 'Spoken in Russia and former Soviet states. Important for business and diplomatic relations.'),
+('Japanese', 'Spoken in Japan. Useful for business, travel, and cultural understanding.'),
+('Korean', 'Spoken in South Korea. Important for business and cultural understanding.'),
+('French', 'Spoken in France, Canada, and many African countries. Useful for travel, business, and diplomatic relations.');
+
+-- Seed data for Courses
+INSERT INTO "Courses" ("Title", "LanguageId")
+VALUES
+('Beginner Chinese', 1),
+('Beginner Spanish', 2),
+('Beginner English', 3),
+('Beginner Arabic', 4),
+('Beginner Hindi', 5),
+('Beginner Portuguese', 6),
+('Beginner Russian', 7),
+('Beginner Japanese', 8),
+('Beginner Korean', 9),
+('Beginner French', 10);
+
+-- Seed data for Modules
+INSERT INTO "Modules" ("Title", "CourseId")
+VALUES
+('Chinese Basics', 1),
+('Spanish Basics', 2),
+('English Basics', 3),
+('Arabic Basics', 4),
+('Hindi Basics', 5),
+('Portuguese Basics', 6),
+('Russian Basics', 7),
+('Japanese Basics', 8),
+('Korean Basics', 9),
+('French Basics', 10);
+
+-- Seed data for Lessons
+INSERT INTO "Lessons" ("Title", "ContentType", "CreatedAt", "ModuleId")
+VALUES
+('Introduction to Chinese', 1, '2024-06-16 00:00:00+00', 1),
+('Introduction to Spanish', 1, '2024-06-16 00:00:00+00', 2),
+('Introduction to English', 1, '2024-06-16 00:00:00+00', 3),
+('Introduction to Arabic', 1, '2024-06-16 00:00:00+00', 4),
+('Introduction to Hindi', 1, '2024-06-16 00:00:00+00', 5),
+('Introduction to Portuguese', 1, '2024-06-16 00:00:00+00', 6),
+('Introduction to Russian', 1, '2024-06-16 00:00:00+00', 7),
+('Introduction to Japanese', 1, '2024-06-16 00:00:00+00', 8),
+('Introduction to Korean', 1, '2024-06-16 00:00:00+00', 9),
+('Introduction to French', 1, '2024-06-16 00:00:00+00', 10);
